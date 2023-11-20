@@ -1,14 +1,9 @@
-function createPhoneNumber(numbers){
-    return `(${numbers[0]}${numbers[1]}${numbers[2]}) ${numbers[3]}${numbers[4]}${numbers[5]}-${numbers[6]}${numbers[7]}${numbers[8]}${numbers[9]}`
-}
-console.log(createPhoneNumber([1,2,3,4,5,6,7,8,9,1]))
-function createPhoneNumber(numbers){
-    var format = "(xxx) xxx-xxxx";
+function findOdd(A) {
+    let objectA = {};
+    for (const objectAElement of A) {
+     objectA[objectAElement] = (objectA[objectAElement] || 0) + 1;
 
-    for(var i = 0; i < numbers.length; i++)
-    {
-        format = format.replace('x', numbers[i]);
+        }
+    return +Object.keys(objectA).find(objectAElement => objectA[objectAElement] % 2 == 1)
     }
-
-    return format;
-}
+  console.log(findOdd([1,2,2,2,1]))
